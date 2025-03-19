@@ -3,7 +3,6 @@
  * @param {number[]} nums2
  * @return {number}
  */
- 
  var findMedianSortedArrays = function (nums1, nums2) {
   if (nums1.length > nums2.length) {
     return findMedianSortedArrays(nums2, nums1);
@@ -25,7 +24,6 @@
     let minRightY = partitionY === y ? Infinity : nums2[partitionY];
 
     if (maxLeftX <= minRightY && maxLeftY <= minRightX) {
-      // If total length is even
       if ((x + y) % 2 === 0) {
         return (
           (Math.max(maxLeftX, maxLeftY) + Math.min(minRightX, minRightY)) / 2.0
