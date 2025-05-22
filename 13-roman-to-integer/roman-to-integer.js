@@ -21,7 +21,7 @@ var romanToInt = function(s) {
 
         if (next > current) {
             total += (next - current);
-            i++; // Skip the next character as it's already used
+            i++; 
         } else {
             total += current;
         }
