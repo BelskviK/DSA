@@ -4,27 +4,27 @@
  */
 var intToRoman = function(num) {
     const valMap = [
-        { value: 1000, symbol: 'M' },
-        { value: 900, symbol: 'CM' },
-        { value: 500, symbol: 'D' },
-        { value: 400, symbol: 'CD' },
-        { value: 100, symbol: 'C' },
-        { value: 90, symbol: 'XC' },
-        { value: 50, symbol: 'L' },
-        { value: 40, symbol: 'XL' },
-        { value: 10, symbol: 'X' },
-        { value: 9, symbol: 'IX' },
-        { value: 5, symbol: 'V' },
-        { value: 4, symbol: 'IV' },
-        { value: 1, symbol: 'I' }
+        { v: 1000, s: 'M' },
+        { v: 900, s: 'CM' },
+        { v: 500, s: 'D' },
+        { v: 400, s: 'CD' },
+        { v: 100, s: 'C' },
+        { v: 90, s: 'XC' },
+        { v: 50, s: 'L' },
+        { v: 40, s: 'XL' },
+        { v: 10, s: 'X' },
+        { v: 9, s: 'IX' },
+        { v: 5, s: 'V' },
+        { v: 4, s: 'IV' },
+        { v: 1, s: 'I' }
     ];
 
     let result = '';
     
-    for (const { value, symbol } of valMap) {
-        while (num >= value) {
-            result += symbol;
-            num -= value;
+    for (const { v, s } of valMap) {
+        while (num >= v) {
+            result += s;
+            num -= v;
         }
     }
 
