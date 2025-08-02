@@ -1,23 +1,12 @@
-/**
- * @param {string} s
- * @param {string} t
- * @return {boolean}
- */
 var isAnagram = function(s, t) {
-    if (s.length !== t.length) return false; // Different lengths = not anagrams
+    if (s.length !== t.length) return false;
 
-    const count = {};
+    const count = new Array(26).fill(0);
 
-    // Count each letter in s
-    for (let char of s) {
-        count[char] = (count[char] || 0) + 1;
+    for (let i = 0; i < s.length; i++) {
+        count[s.charCodeAt(i) - 97]++;
+        count[t.charCodeAt(i) - 97]--;
     }
 
-    // Subtract counts using t
-    for (let char of t) {
-        if (!count[char]) return false; // Letter missing or overused
-        count[char]--;
-    }
-
-    return true; // All counts balanced
+    return count.every(c => c === 0);
 };
